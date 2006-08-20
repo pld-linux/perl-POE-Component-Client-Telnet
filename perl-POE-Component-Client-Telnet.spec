@@ -1,37 +1,42 @@
 #
 # Conditional build:
 %bcond_without	autodeps	# don't BR packages needed only for resolving deps
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests		# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	POE
 %define		pnam	Component-Client-Telnet
-Summary:	perl(POE::Component::Client::Telnet) - Non-blocking POE interface to Net::Telnet
+Summary:	POE::Component::Client::Telnet - non-blocking POE interface to Net::Telnet
+Summary(pl):	POE::Component::Client::Telnet - nieblokuj±cy interfejs POE do Net::Telnet
 Name:		perl-POE-Component-Client-Telnet
 Version:	0.06
 Release:	0.1
-# note if it is "same as perl"
-License:	(enter GPL/LGPL/BSD/BSD-like/Artistic/other license name here)
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	90eca1ffae98b57eb4db9b5cbd828db1
 URL:		http://search.cpan.org/dist/POE-Component-Client-Telnet/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-#BuildRequires:	-
 %if %{with autodeps} || %{with tests}
-#BuildRequires:	perl-
-#BuildRequires:	perl-
+BuildRequires:	perl-Devel-Symdump
+BuildRequires:	perl-Net-Telnet
+BuildRequires:	perl-POE >= 0.31
+BuildRequires:	perl-Test-Simple >= 0.32
 %endif
-#Requires:	-
-#Provides:	-
-#Obsoletes:	-
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-POE::Component::Client::Telnet is a POE component that provides a non-blocking
-wrapper around Net::Telnet, or any other module based on Net::Telnet.  
-Consult the Net::Telnet documentation for more details.
+POE::Component::Client::Telnet is a POE component that provides a
+non-blocking wrapper around Net::Telnet, or any other module based on
+Net::Telnet. Consult the Net::Telnet documentation for more details.
+
+%description -l pl
+POE::Component::Client::Telnet to komponent POE udostêpniaj±cy
+nieblokuj±cy wrapper dla Net::Telnet lub dowolnego innego modu³u
+opartego na Net::Telnet. Szczegó³y w dokumentacji Net::Telnet.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
