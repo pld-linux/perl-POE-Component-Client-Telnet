@@ -10,7 +10,7 @@ Summary:	POE::Component::Client::Telnet - non-blocking POE interface to Net::Tel
 Summary(pl):	POE::Component::Client::Telnet - nieblokuj±cy interfejs POE do Net::Telnet
 Name:		perl-POE-Component-Client-Telnet
 Version:	0.06
-Release:	0.1
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -22,9 +22,10 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with autodeps} || %{with tests}
 BuildRequires:	perl-Devel-Symdump
 BuildRequires:	perl-Net-Telnet
-BuildRequires:	perl-POE >= 0.31
+BuildRequires:	perl-POE >= 1:0.3100
 BuildRequires:	perl-Test-Simple >= 0.32
 %endif
+Requires:	perl-POE >= 1:0.3100
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
