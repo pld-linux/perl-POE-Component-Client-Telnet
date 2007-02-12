@@ -7,7 +7,7 @@
 %define		pdir	POE
 %define		pnam	Component-Client-Telnet
 Summary:	POE::Component::Client::Telnet - non-blocking POE interface to Net::Telnet
-Summary(pl.UTF-8):   POE::Component::Client::Telnet - nieblokujący interfejs POE do Net::Telnet
+Summary(pl.UTF-8):	POE::Component::Client::Telnet - nieblokujący interfejs POE do Net::Telnet
 Name:		perl-POE-Component-Client-Telnet
 Version:	0.06
 Release:	1
